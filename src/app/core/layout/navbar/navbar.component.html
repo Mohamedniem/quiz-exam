@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg  container">
+  <div class="container-fluid">
+    <a class="navbar-brand collapse navbar-collapse" id="navbarSupportedContent"  data-bs-toggle="" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><img class="mainicon" src="./assets/images/ele1.png" alt=""></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <form class="d-flex w-100 me-3" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-primary" type="submit">Search</button>
+      </form>
+
+    </div>
+
+    <div class="navbarimg">
+      <img class="navbarimg rounded rounded-circle" src="./assets/images/fi.jpeg" alt="">
+    </div>
+  </div>
+</nav>
+
+
+<!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Toggle top offcanvas</button> -->
+
+<div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasTopLabel">Offcanvas top</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class=" ps-0 ">
+      <li class="d-flex " ><span class="p-2 rounded rounded-2" routerLinkActive="active"> <i class="fa-solid fa-table-columns" ></i> <a class="text-decoration-none ms-4 txt-color fw-bold" routerLink="mainhome" >Dashboard</a></span> </li>
+      <li class="d-flex my-4" ><span class="p-2 rounded rounded-2" routerLinkActive="active"><i class="fa-solid fa-stopwatch-20"></i> <a class="text-decoration-none ms-4 txt-color fw-bold" routerLink="exampage">Quiz History</a></span></li>
+      <li class="d-flex"><span class="p-2 rounded rounded-2" routerLinkActive="active"><i class="fa-solid fa-right-from-bracket"></i> <a class="text-decoration-none ms-4 txt-color fw-bold" routerLink="exampage" (click)="logout()">Log Out</a></span></li>
+    </ul>
+  </div>
+</div>
+
+
+

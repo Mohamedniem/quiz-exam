@@ -1,0 +1,11 @@
+@media (max-width:768px){
+    
+    .diplay-none1{
+        display: none !important;
+    }
+}
+
+.active{
+    background-color: blueviolet;
+    color: white !important;
+}

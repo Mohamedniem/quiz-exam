@@ -1,0 +1,20 @@
+<div>
+  <app-navbar></app-navbar>
+</div>
+<div class="container mt-5 ">
+    <div class="row mt-4 ">
+        <div class="col-md-2 diplay-none1">
+            <ul class=" ps-0 ">
+                <li class="d-flex " ><span class="p-2 rounded rounded-2" routerLinkActive="active"> <i class="fa-solid fa-table-columns" ></i> <a class="text-decoration-none ms-4 txt-color fw-bold" routerLink="mainhome" >Dashboard</a></span> </li>
+                <li class="d-flex my-4" ><span class="p-2 rounded rounded-2" routerLinkActive="active"><i class="fa-solid fa-stopwatch-20"></i> <a class="text-decoration-none ms-4 txt-color fw-bold" routerLink="exampage">Quiz History</a></span></li>
+                <li class="d-flex"><span class="p-2 rounded rounded-2" routerLinkActive="active"><i class="fa-solid fa-right-from-bracket"></i> <a class="text-decoration-none ms-4 txt-color fw-bold" routerLink="login" (click)="logout()">Log Out</a></span></li>
+            </ul>
+        </div>
+        <div class="col-md-10">
+
+            <router-outlet></router-outlet>
+
+        </div>
+
+    </div>
+</div>

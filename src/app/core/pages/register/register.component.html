@@ -1,0 +1,123 @@
+<div>
+    <div class="container mt-5">
+        <p class="my-3 auth-head">Sign up</p>
+        <form [formGroup]="registerform" (ngSubmit)="getregister()">
+            <div class="">
+
+                <input type="text" id="username" class="form-control mb-1" placeholder="Username" formControlName="username">
+
+                @if (registerform.get('username')?.errors && registerform.get('username')?.touched) {
+                    <div class="alert alert-danger py-1" >
+                        @if (registerform.get('username')?.getError('required')){
+                          <small class="p-0">userName is required</small>
+                        }
+                         @else if(registerform.get('username')?.getError('minlength')){
+                          <small class="p-0">should be character only with minlength: 4 </small>
+                        } @else if (registerform.get('username')?.getError('maxlength')) {
+                          <small class="p-0">should be character only with maxlength: 25</small>
+                        }
+                    </div>
+                  }
+            </div>
+            <div class="mt-3">
+
+                <input type="text" id="firstname" class="form-control" placeholder="First Name" formControlName="firstName">
+
+                @if (registerform.get('firstName')?.errors && registerform.get('firstName')?.touched) {
+                  <div class="alert alert-danger py-1" >
+                      @if (registerform.get('firstName')?.getError('required')){
+                        <small class="p-0">first Name is required</small>
+                      }@else if (registerform.get('firstName')?.getError('pattern')) {
+                        <small class="p-0">first Name contains only letters </small>
+                      }
+                      
+                  </div>
+                }
+            </div>
+            <div class="mt-3">
+
+                <input type="text" id="lastname"  class="form-control" placeholder="Last Name" formControlName="lastName">
+
+                @if (registerform.get('lastName')?.errors && registerform.get('lastName')?.touched) {
+                  <div class="alert alert-danger py-1" >
+                      @if (registerform.get('lastName')?.getError('required')){
+                        <small class="p-0">last Name is required</small>
+                      }@else if (registerform.get('lastName')?.getError('pattern')) {
+                        <small class="p-0">last Name contains only letters </small>
+                      }
+                      
+                  </div>
+                }
+            </div>
+
+            <div class="mt-3">
+
+                <input type="email" class="form-control" placeholder="Email" formControlName="email">
+
+                @if (registerform.get('email')?.errors && registerform.get('email')?.touched) {
+                  <div class="alert alert-danger py-1" >
+                      @if (registerform.get('email')?.getError('required')){
+                        <small class="p-0">Email is required</small>
+                      }
+                     @else if(registerform.get('email')?.getError('email')){
+                        <small class="p-0">enter valid mail</small>
+                      }
+                  </div>
+                }
+            </div>
+
+            <div class="mt-3">
+
+                <input type="text" class="form-control" placeholder="Password" formControlName="password">
+
+
+                @if (registerform.get('password')?.errors && registerform.get('password')?.touched) {
+                  <div class="alert alert-danger py-1" >
+                      @if (registerform.get('password')?.getError('required')){
+                        <small class="p-0">Password is required</small>
+                      }
+                     @else if(registerform.get('password')?.getError('pattern')){
+                        <small class="p-0"> password length should be at min 8 chars. With upper case letter and a number at least and (!,#,$,%,?,=,*,&)</small>
+                      }
+                  </div>
+                }
+            </div>
+            <div class="mt-3">
+
+                <input type="text" class="form-control" placeholder="RePassword" formControlName="rePassword">
+
+                @if (registerform.getError('mismatch') && registerform.get('rePassword')?.touched) {
+                  <div class="alert alert-danger py-1" >
+                     
+                        <small class="p-0">rePassword confirmation is incorrect</small>
+                    
+                  </div>
+                }
+            </div>
+            <div class="mt-3">
+
+                <input type="tel" class="form-control" placeholder="Phone" formControlName="phone">
+
+                @if (registerform.get('phone')?.errors && registerform.get('phone')?.touched) {
+                  <div class="alert alert-danger py-1" >
+                      @if (registerform.get('phone')?.getError('required')){
+                        <small class="p-0">phone number is required</small>
+                      }
+                     @else if(registerform.get('phone')?.getError('pattern')){
+                        <small class="p-0">enter valid phone number</small>
+                      }
+                  </div>
+                }
+
+            </div>
+            <div class="text-center mt-3">
+              <small >Already have acount? <a class="text-primary " routerLink='/login'>Login</a></small>
+
+            </div>
+
+            <button class="btn btn-auth w-100 my-3" [disabled]="registerform.invalid">Register</button>
+
+        </form>
+    </div>
+</div>
+

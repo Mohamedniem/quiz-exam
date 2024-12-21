@@ -1,0 +1,136 @@
+<div>
+    @for (item of allexams; track $index) {
+        <div class="bg-white p-3 mb-4 rounded rounded-3 examshadow">
+            <div class="d-flex justify-content-between">
+                <div>
+                        <p class="quizstyle">{{item.title}}</p>
+                        <small class="m-0 quizstyle1">{{item.numberOfQuestions}} questions</small>
+                </div>
+                <div class="d-flex flex-column">
+                    <small class="">{{item.duration}} minute</small>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        start
+                      </button>
+                </div>
+            </div>
+        </div>
+    }
+
+
+   <!-- Button trigger modal -->
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Intstructions</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <p>1.you cant select any option once time goes off</p>
+            <p>2.you cant select any option once time goes off</p>
+            <p>3.you cant select any option once time goes off</p>
+            <p>4.you cant select any option once time goes off</p>
+
+        </div>
+        <div class="modal-footer d-flex justify-content-between">
+
+          <button type="button" class="btn btn-primary w-100" (click)="countdown.resume()"  data-bs-toggle="modal" data-bs-target="#staticBackdrop1" >Start</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ############################################## -->
+  <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-title fs-5 d-flex justify-content-between w-100" id="staticBackdropLabel">
+             <p>question {{n+1}} of {{allquestions.length}}</p>
+             <div>
+              <countdown #countdown [config]="{ leftTime: 1500, format: 'm:s' ,demand:true }" />
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-body">
+            <h4>{{allquestions[0+n].question}}</h4>
+            <div>
+              @for (item of allquestions[n].answers; track $index) {
+                <div class="form-check py-3 questions rounded rounded-2 my-2 ">
+                    <input class="form-check-input ms-1" (click)="selectoption(item.key)" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                    <label class="form-check-label ms-1" for="exampleRadios1">
+                     {{item.answer}}
+                    </label>
+                </div>
+
+              }
+            </div>
+
+
+        </div>
+        <div class="modal-footer d-flex justify-content-between" >
+          <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">back</button> -->
+          <button type="button" [disabled]="n==0" class="btn btn-outline-primary px-5 " (click)="nminus()" >back</button>
+          @if(n+1==allquestions.length){
+            <button type="button" class="btn btn-primary w-25"   data-bs-toggle="modal" data-bs-target="#staticBackdrop2" >finish</button>
+          }@else {
+
+            <button type="button" class="btn btn-outline-primary" (click)="nplus()"  >next</button>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Your score</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body ">
+          <div class="d-flex justify-content-center align-items-center">
+            <div>
+              <circle-progress
+                  [percent]="countplus*10"
+                  [radius]="100"
+                  [outerStrokeWidth]="16"
+                  [innerStrokeWidth]="8"
+                  [outerStrokeColor]="'#78C000'"
+                  [innerStrokeColor]="'#C7E596'"
+                  [animation]="true"
+                  [animationDuration]="300"
+                ></circle-progress>
+            </div>
+            <div class="ps-3">
+              <p>correct  {{countplus}}</p>
+              <p>not correct  {{10-countplus}}</p>
+            </div>
+
+          </div>
+
+
+        <div class="modal-footer d-flex justify-content-between">
+
+          <button type="button" class="btn btn-primary w-100"   data-bs-toggle="modal" data-bs-target="#staticBackdrop2" >quit quiz</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+</div>

@@ -1,0 +1,21 @@
+@media (max-width:768px){
+    
+    .icon-shasow{
+        width: 40px;
+        height: 40px;
+        box-shadow: 0px 8.57px 22.86px 2.86px #EDEDED;
+      }
+      .icon{
+        font-size: 21px;
+        color: #4461F2;}
+        .size29{
+            font-size: 18px;
+            font-weight: 700;
+          }
+        .size14{
+            font-size: 14px;
+            
+          }
+
+
+}

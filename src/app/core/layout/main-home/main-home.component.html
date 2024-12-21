@@ -1,0 +1,64 @@
+            
+            <div class="">
+                <div class="row bg-white rounded rounded-4 ">
+                    <div class="col-md-3 col-sm-12 p-4">
+                        <img class="main-image" src="./assets/images/fi.jpeg" alt="">
+                    </div>
+                    <div class="col-md-9 col-sm-12  px-5 mt-5 ">
+                        <h4 class="txt-color1 fw1">Ahmed Mohamed</h4>
+                        <p class="txt-color2">Voluptatem aut</p>
+                        <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar" style="width: 75%"></div>
+                          </div>
+                        <div class="d-flex justify-content-between  mt-5 w-100">
+                            <div class="d-flex">
+                                <span class="p-2 icon icon-shasow text-center rounded rounded-2 me-2"><i class="fa-solid fa-flag"></i></span>
+                                <div class=" txt-color">
+                                  <p class="size29">27</p>
+                                  <p class="size14">Quiz Passed</p>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <span class="p-2 icon icon-shasow text-center rounded rounded-2 me-2"><i class="fa-solid fa-clock"></i></span>
+                                <div class=" txt-color">
+                                  <p class="size29">13min</p>
+                                  <p class="size14">Quiz Passed</p>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <span class="p-2 icon icon-shasow text-center rounded rounded-2 me-2"><i class="fa-solid fa-circle-check"></i></span>
+                                <div class=" txt-color">
+                                  <p class="size29">200</p>
+                                  <p class="size14">Correct Answers</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+    
+    
+    
+                <div class="bg-white my-4 rounded rounded-4">
+                    <div class="d-flex justify-content-between p-3 txt-color1 fw-bold">
+                        <p>Quizes</p>
+                        <p>View All</p>
+                    </div>
+                    <div class="row px-4">
+                        @for (item of allsubjects; track $index) {
+                            <div class="col-md-4 rounded rounded-2 my-2" >
+                                <div class="position-relative pan" routerLink="/exampage">
+                                    <img class="w-100" [src]="item.icon" alt="">
+                                    <div class="position-absolute box-quiz">
+                                        <p class="text-white mt-3">{{item.name}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+    
+                </div>
+
+            </div>
+            
+

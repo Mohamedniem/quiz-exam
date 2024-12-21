@@ -1,0 +1,47 @@
+<div>
+    <div class="container mt-5">
+        <p class="auth-head">Sign in</p>
+        <form [formGroup]="loginform" (ngSubmit)="getlogin()">
+            <div class="py-4">
+
+                <input type="email" class="form-control" placeholder="Email" formControlName="email">
+                @if (loginform.get('email')?.errors && loginform.get('email')?.touched) {
+                    <div class="alert alert-danger py-1" >
+                        @if (loginform.get('email')?.getError('required')){
+                          <small class="p-0">Email is required</small>
+                        }
+                       @else if(loginform.get('email')?.getError('email')){
+                          <small class="p-0">enter valid mail</small>
+                        }
+                    </div>
+                  }
+                
+            </div>
+
+            <div>
+
+                <input type="text" class="form-control" placeholder="Password" formControlName="password">
+                @if (loginform.get('password')?.errors && loginform.get('password')?.touched) {
+                    <div class="alert alert-danger py-1" >
+                        @if (loginform.get('password')?.getError('required')){
+                          <small class="p-0">Password is required</small>
+                        }
+                       @else if(loginform.get('password')?.getError('pattern')){
+                          <small class="p-0"> password is invalid</small>
+                        }
+                    </div>
+                  }
+                <div class="text-end mt-3">
+                  <a routerLink="/forgetpassword">Recover Password?</a>
+                    <small  ></small>
+
+
+
+                </div>
+            </div>
+
+            <button class="btn btn-auth my-5 w-100">Login</button>
+
+        </form>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+.main-color{
+    background-color:  #F0F4FC;
+    ;
+}
+.top-round{
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+}
+.select-width{
+    width: 27%;
+    border: none !important;
+}
+.maintxt50{
+font-family: Poppins;
+font-size: 50px;
+font-weight: 700;
+line-height: 75px;
+text-align: left;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+
+}
+.maintxt18{
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 40px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+
+}
+.maintxt50-color{
+  color: rgba(18, 45, 156, 1);
+
+
+}
+.main-shadow{
+  box-shadow: 0px 5px 100px 0px rgba(0, 0, 0, 0.1);
+
+}

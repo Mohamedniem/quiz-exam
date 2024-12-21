@@ -1,0 +1,21 @@
+<div>
+  <div class="container mt-5">
+      <p class="auth-head">Verify code</p>
+      <form [formGroup]="verifyform" (ngSubmit)="verify()">
+          <div class="py-4">
+
+              <input type="password" class="form-control" placeholder="resetCode" formControlName="resetCode">
+          </div>
+
+          <div>
+              <div class="text-end mt-3">
+                <small >Didn't receive code?<span>Resend</span></small>
+              </div>
+          </div>
+
+          <button class="btn btn-auth my-5 w-100">Verify</button>
+
+      </form>
+  </div>
+</div>
+

@@ -1,0 +1,57 @@
+.w-fit{
+    width:40px ;
+    border-radius: 50%;
+}
+:root{
+    --offcanvas-width:270px;
+    --bs-offcanvas-border-width:0px;
+    --bs-offcanvas-border-color:white;
+}
+
+.sidebar-nav{
+    width: var(--offcanvas-width);
+}
+
+.offcanvas.offcanvas-start {
+    top: 154px !important;
+    /* left: 50px !important; */
+}
+
+@media (min-width:992px){
+    .offcanvas-backdrop ::before{
+        display: none;
+    }
+    .sidebar-nav{
+        transform: none;
+        visibility: visible !important;
+
+    }
+    .diplay-none{
+        display: none;
+    }
+}
+@media (min-width:768px){
+    
+    .diplay-none1{
+        display: none !important;
+    }
+}
+
+/* .offcanvas, .offcanvas-lg, .offcanvas-md, .offcanvas-sm, .offcanvas-xl, .offcanvas-xxl {
+   
+     --bs-offcanvas-border-width: var(--bs-border-width) !important;
+     --bs-offcanvas-border-color: var(--bs-border-color-translucent)
+    } */
+
+    .offcanvas.offcanvas-start {
+        top: 0;
+        left: 0;
+        width: var(--bs-offcanvas-width);
+        border-right: 0 !important;
+       
+    }
+
+    .active{
+        background-color: blueviolet;
+        color: white !important;
+    }
